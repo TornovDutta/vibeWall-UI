@@ -3,30 +3,56 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    q: "How does it solve privacy?",
-    a: "VibeWall is designed for anonymous sharing with encrypted storage and a short retention window, so users can express emotions without linking confessions to their identity.",
+    q: "What real-world problem does VibeWall solve at a system level?",
+    a: "VibeWall addresses the risk of long-term storage of sensitive emotional data. Traditional platforms retain user-generated content indefinitely, increasing exposure during breaches. VibeWall minimizes both identity linkage and data lifespan to reduce impact under failure scenarios.",
   },
   {
-    q: "How does it hide a user’s data from other people?",
-    a: "Confessions are stored and served without exposing personal identifiers, and access is controlled via server-side authorization. Other users only see the confession content—not who posted it.",
+    q: "Why did you choose server-side encryption instead of relying only on database security?",
+    a: "Database-level security assumes infrastructure is never compromised. Server-side encryption protects data even if access controls fail, addressing insider threats, misconfiguration, or data exfiltration scenarios.",
   },
   {
-    q: "How long does a confession live?",
-    a: "Confessions are automatically deleted after 12 hours (TTL). This minimizes long-term risk and keeps the platform truly temporary.",
+    q: "What threat model does server-side encryption protect against?",
+    a: "It protects against database leaks, unauthorized admin access, backup exposure, and read-only breaches where attackers gain data access but not application-level keys.",
   },
   {
-    q: "What security is implemented?",
-    a: "JWT-based authentication (access + refresh), role-based access control (RBAC), secure password hashing, report/moderation flows, and encrypted storage for sensitive content.",
+    q: "Why did you implement time-based deletion instead of user-controlled deletion?",
+    a: "User-controlled deletion is inconsistent and relies on correct user behavior. Time-based deletion enforces data minimization by default, ensuring sensitive data does not accumulate unintentionally.",
   },
   {
-    q: "How does server-side encryption prevent developers/admins from reading confessions?",
-    a: "Encryption is applied before data is stored. Without the decryption key, raw database queries only return ciphertext—meaning the plaintext confession cannot be read directly from the DB.",
+    q: "Why is the expiration window set to 12 hours?",
+    a: "Twelve hours balances usability and risk. It allows sufficient interaction while keeping the exposure window short enough to limit damage if data is compromised.",
   },
   {
-    q: "Can someone query the database to display every confession?",
-    a: "They can retrieve encrypted records, but they still can’t turn ciphertext into readable text without the decryption key. Proper key management and restricted access are critical to maintain this guarantee.",
+    q: "How does short data retention improve system security?",
+    a: "It limits the volume of sensitive data available at any point in time, reduces breach impact, simplifies compliance, and prevents historical data correlation or profiling.",
+  },
+  {
+    q: "Why use Redis caching if the data is sensitive?",
+    a: "Redis improves read performance and scalability. To maintain privacy, cached data uses strict TTLs synchronized with database expiration, ensuring caching does not extend data lifetime.",
+  },
+  {
+    q: "Why use JWT-based authentication instead of server sessions?",
+    a: "JWTs enable stateless authentication, reducing server memory usage and session fixation risks. Short-lived access tokens and refresh tokens limit the impact of token leakage.",
+  },
+  {
+    q: "How does role-based access control help prevent internal misuse?",
+    a: "RBAC ensures that sensitive operations are limited to specific roles, reducing accidental exposure and narrowing the blast radius of compromised accounts.",
+  },
+  {
+    q: "Why combine AI moderation with a reporting system?",
+    a: "AI moderation provides scalable first-pass filtering, while reporting handles edge cases and false negatives. This layered approach improves safety without relying on a single control.",
+  },
+  {
+    q: "How does VibeWall handle system failure or breach scenarios?",
+    a: "Encryption prevents plaintext exposure, TTL limits data volume, and stateless authentication reduces persistent session risk—together minimizing breach impact.",
+  },
+  {
+    q: "What core design principle guided your architecture?",
+    a: "Data minimization. The system intentionally collects less data, stores it encrypted, and deletes it quickly to reduce risk under both normal and failure conditions.",
   },
 ];
+
+
 
 function Documenents() {
   return (
