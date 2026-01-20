@@ -2,13 +2,16 @@ import React from 'react'
 
 function SubFeatures({ feature }) {
   return (
-    <div className="h-full rounded-xl border border-emerald-500/50 bg-[#0b0f0b]/80 p-5 shadow-[0_0_18px_rgba(16,185,129,0.22)] hover:shadow-[0_0_26px_rgba(16,185,129,0.35)] transition-shadow duration-200">
-      <div className="mb-3 flex items-center justify-between text-xs text-emerald-200/90">
-        <span>✓ ENABLED</span>
-        <span className="text-amber-200/90">ONLINE</span>
+    <div className="h-full card p-5">
+      <div className="mb-3 flex items-center justify-between text-xs text-slate-400">
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          ENABLED
+        </span>
+        <span className="text-slate-300">ONLINE</span>
       </div>
 
-      <p className="text-lg text-emerald-100">
+      <p className="text-lg font-semibold text-slate-100">
         {feature}
       </p>
     </div>

@@ -12,10 +12,10 @@ function Problem({problems,SectionHeading}) {
             {problems.map((item) => (
               <div
                 key={item.text}
-                className="rounded-xl border border-emerald-500/40 bg-[#0a0f0a]/80 p-4 shadow-[0_0_16px_rgba(16,185,129,0.18)]"
+                className="card p-4"
               >
-                <p className="text-amber-200/90 text-xs mb-2">[{item.level}]</p>
-                <p className="text-emerald-100">{item.text}</p>
+                <p className="text-slate-400 text-xs mb-2">[{item.level}]</p>
+                <p className="text-slate-100">{item.text}</p>
               </div>
             ))}
           </div>

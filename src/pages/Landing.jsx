@@ -71,15 +71,15 @@ function SectionHeading({ label, title, description }) {
   return (
     <div className="space-y-2 text-center">
       {label && (
-        <p className="text-xs tracking-[0.25em] text-amber-300/70 uppercase">
+        <p className="kicker">
           {label}
         </p>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold text-emerald-300">
+      <h2 className="text-3xl sm:text-4xl font-bold text-slate-50">
         {title}
       </h2>
       {description && (
-        <p className="mx-auto max-w-3xl text-gray-300/80 leading-relaxed">
+        <p className="mx-auto max-w-3xl text-slate-300 leading-relaxed">
           {description}
         </p>
       )}
@@ -91,7 +91,7 @@ function SectionHeading({ label, title, description }) {
 
 function Landing() {
   return (
-    <main className="relative mx-auto max-w-6xl space-y-24 px-4 py-10 sm:px-6 sm:py-14">
+    <main className="relative container-page space-y-24 py-10 sm:py-14">
         {/* Hero */}
         <Hero />
 
@@ -120,15 +120,15 @@ function Landing() {
         />
 
         {/* Docs */}
-        <section className="relative overflow-hidden rounded-2xl border border-emerald-500/25 bg-black/60 p-6 sm:p-10">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.12),_transparent_45%)]" />
+        <section className="relative overflow-hidden card p-6 sm:p-10">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.20),_transparent_55%)]" />
           <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3">
-              <p className="text-xs tracking-[0.25em] text-amber-300/70 uppercase">Documentation</p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-emerald-200">
-                <span className="glitch" data-text="Privacy & Security FAQ">Privacy &amp; Security FAQ</span>
+              <p className="kicker">Documentation</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-50">
+                Privacy &amp; Security FAQ
               </h3>
-              <p className="max-w-2xl text-gray-300/80 leading-relaxed">
+              <p className="max-w-2xl text-slate-300 leading-relaxed">
                 Understand how VibeWall protects confessions: encryption, retention window (12h TTL), and safeguards that
                 keep data private even from admins and developers.
               </p>
@@ -137,11 +137,11 @@ function Landing() {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/docs"
-                className="inline-flex items-center gap-2 rounded-lg border border-emerald-400/60 bg-emerald-500/10 px-5 py-3 font-semibold text-emerald-200 shadow-[0_0_22px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.45)] hover:-translate-y-0.5 transition-transform transition-shadow duration-200"
+                className="btn-primary px-5 py-3"
               >
-                Read docs <span className="text-amber-300/80">→</span>
+                Read docs <span className="text-white/80">→</span>
               </Link>
-              <span className="text-sm text-gray-500/80">/docs</span>
+              <span className="text-sm text-slate-400">/docs</span>
             </div>
           </div>
         </section>

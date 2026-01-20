@@ -90,39 +90,39 @@ function Documents() {
   const active = faqs[activeIndex];
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <main className="container-page py-10 sm:py-14">
       {/* Header */}
-      <header className="mb-8 space-y-3">
-        <p className="text-sm text-amber-300/80">~/vibewall $ docs --system-design</p>
-        <h1 className="text-4xl font-extrabold text-emerald-300 terminal-prompt">
-          &gt; Docs_<span className="cursor-blink">█</span>
+      <header className="mb-10 space-y-4">
+        <p className="kicker">Documentation</p>
+        <h1 className="text-4xl font-extrabold text-slate-50">
+          Privacy &amp; Security FAQ
         </h1>
        
         <Link
           to="/"
-          className="inline-block text-emerald-300 hover:text-emerald-200 text-sm"
+          className="inline-block text-slate-300 hover:text-slate-50 text-sm transition-colors"
         >
           ← Back to landing
         </Link>
       </header>
 
       {/* Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6">
         {/* Sidebar */}
-        <aside className="border border-emerald-500/20 bg-black/60 rounded-xl p-4 h-[70vh] overflow-y-auto">
-          <p className="text-xs tracking-widest text-amber-300/70 uppercase mb-3">
+        <aside className="card p-4 h-[70vh] overflow-y-auto">
+          <p className="kicker mb-4">
             Questions
           </p>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {faqs.map((item, idx) => (
               <li key={idx}>
                 <button
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-full text-left text-sm rounded-md px-3 py-2 transition
+                  className={`w-full text-left text-sm rounded-lg px-3 py-2 transition
                     ${
                       idx === activeIndex
-                        ? "bg-emerald-500/10 text-emerald-200 border border-emerald-400/40"
-                        : "text-gray-300/80 hover:bg-emerald-500/5"
+                        ? "bg-indigo-500/20 text-slate-50 border border-indigo-500/40"
+                        : "text-slate-300 hover:bg-gray-800/50"
                     }`}
                 >
                   {item.q}
@@ -133,14 +133,14 @@ function Documents() {
         </aside>
 
         {/* Content */}
-        <section className="border border-emerald-500/20 bg-black/60 rounded-xl p-6 space-y-4">
-          <h2 className="text-2xl font-semibold text-emerald-200">
+        <section className="card p-6 space-y-4">
+          <h2 className="text-2xl font-semibold text-slate-50">
             {active.q}
           </h2>
 
-          <div className="h-px bg-gradient-to-r from-emerald-400/30 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-indigo-500/40 to-transparent" />
 
-          <p className="text-gray-300/80 leading-relaxed text-base">
+          <p className="text-slate-300 leading-relaxed text-base">
             {active.a}
           </p>
 
