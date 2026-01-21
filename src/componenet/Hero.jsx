@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
@@ -23,6 +24,12 @@ function Hero() {
             >
               View on GitHub
             </a>
+            <Link
+              to="/setup"
+              className="btn-primary px-5 py-3 bg-green-600 hover:bg-green-700 transition-colors"
+            >
+              Get Started
+            </Link>
             <p className="text-sm text-slate-400">Built with privacy-first defaults.</p>
           </div>
         </section>
