@@ -92,61 +92,84 @@ function SectionHeading({ label, title, description }) {
 function Landing() {
   return (
     <main className="relative container-page space-y-24 py-10 sm:py-14">
-        {/* Hero */}
-        <Hero />
+      {/* Hero */}
+      <Hero />
 
-        {/* Problems */}
-        <Problem
-          problems={problems}
-          SectionHeading={SectionHeading}
-        />
+      {/* Problems */}
+      <Problem
+        problems={problems}
+        SectionHeading={SectionHeading}
+      />
 
-        {/* Features */}
-        <Features
-          features={features}
-          SectionHeading={SectionHeading}
-        />
+      {/* Features */}
+      <Features
+        features={features}
+        SectionHeading={SectionHeading}
+      />
 
-        {/* Security */}
-        <Security
-          securitySnippets={securitySnippets}
-          SectionHeading={SectionHeading}
-        />
+      {/* Security */}
+      <Security
+        securitySnippets={securitySnippets}
+        SectionHeading={SectionHeading}
+      />
 
-        {/* Stack */}
-        <Stack
-          stack={stack}
-          SectionHeading={SectionHeading}
-        />
+      {/* Stack */}
+      <Stack
+        stack={stack}
+        SectionHeading={SectionHeading}
+      />
 
-        {/* Docs */}
-        <section className="relative overflow-hidden card p-6 sm:p-10">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.20),_transparent_55%)]" />
-          <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3">
-              <p className="kicker">Documentation</p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-50">
-                Privacy &amp; Security FAQ
-              </h3>
-              <p className="max-w-2xl text-slate-300 leading-relaxed">
-                Understand how VibeWall protects confessions: encryption, retention window (12h TTL), and safeguards that
-                keep data private even from admins and developers.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                to="/docs"
-                className="btn-primary px-5 py-3"
-              >
-                Read docs <span className="text-white/80">→</span>
-              </Link>
-              <span className="text-sm text-slate-400">/docs</span>
-            </div>
+      {/* Docs */}
+      <section className="relative overflow-hidden card p-6 sm:p-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.20),_transparent_55%)]" />
+        <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-3">
+            <p className="kicker">Documentation</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-50">
+              Privacy &amp; Security FAQ
+            </h3>
+            <p className="max-w-2xl text-slate-300 leading-relaxed">
+              Understand how VibeWall protects confessions: encryption, retention window (12h TTL), and safeguards that
+              keep data private even from admins and developers.
+            </p>
           </div>
-        </section>
 
-      </main>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              to="/docs"
+              className="btn-primary px-5 py-3"
+            >
+              Read docs <span className="text-white/80">→</span>
+            </Link>
+            <span className="text-sm text-slate-400">/docs</span>
+          </div>
+        </div>
+      </section>
+
+      {/* API */}
+      <section className="py-10 border-t border-gray-800/60 text-center">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-slate-100">
+              Developers
+            </h3>
+            <p className="text-slate-400 leading-relaxed">
+              You can integrate VibeWall into your applications using our API.
+            </p>
+          </div>
+
+          <div>
+            <Link
+              to="/api"
+              className="btn-secondary px-6 py-3"
+            >
+              View API Docs
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </main>
   )
 }
 
